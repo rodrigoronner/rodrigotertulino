@@ -80,7 +80,7 @@ nav ul li a:hover {
 }
 
 main section {
-    padding: 40px 0;
+    padding: 40px 20px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -91,12 +91,23 @@ h2 {
     margin-bottom: 20px;
 }
 
-.publication-item {
+/* Estilo para itens de publicação e experiência */
+.publication-item, .experience-item {
     background: var(--white);
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
     border-left: 5px solid var(--secondary-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0 5px 5px 0;
+}
+
+.experience-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.experience-item p {
+    margin: 5px 0;
 }
 
 .publication-item p {
