@@ -1,4 +1,4 @@
-# Olá! 👋 Eu sou Rodrigo Ronner Tertulino da Silva
+# Olá! Eu sou Prof. Dr. Rodrigo Tertulino
 
 ### 👨‍🏫 Professor no IFRN | Doutor em Engenharia Informática
 
