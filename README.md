@@ -1,1 +1,1 @@
-# rodrigotertulino
+Doutor em Engenharia Informática pela Universidade de Coimbra e Professor no IFRN. Minhas áreas de atuação e pesquisa incluem a avaliação de desempenho em Redes e Sistemas Distribuídos, Segurança da Informação com ênfase em aplicações Web (PenTest) e a aplicação de tecnologias Blockchain para garantir a privacidade em sistemas de saúde eletrônicos (EHR). Também me dedico ao estudo de métodos ágeis em Engenharia de Software.
