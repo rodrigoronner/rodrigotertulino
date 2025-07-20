@@ -91,8 +91,14 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Estilo para itens de publicação e experiência */
-.publication-item, .experience-item {
+.subsection-title {
+    margin-top: 40px;
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+/* Estilo para itens de publicação, experiência e projetos */
+.publication-item, .experience-item, .project-item {
     background: var(--white);
     padding: 20px;
     margin-bottom: 20px;
@@ -101,12 +107,12 @@ h2 {
     border-radius: 0 5px 5px 0;
 }
 
-.experience-item h3 {
+.experience-item h3, .project-item h4 {
     margin-top: 0;
     color: var(--primary-color);
 }
 
-.experience-item p {
+.experience-item p, .project-item p {
     margin: 5px 0;
 }
 
@@ -114,7 +120,7 @@ h2 {
     margin: 5px 0;
 }
 
-#pesquisa ul {
+#areas-pesquisa ul {
     list-style-type: disc;
     padding-left: 20px;
 }
