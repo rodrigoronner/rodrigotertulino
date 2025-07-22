@@ -2,33 +2,47 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // --- Lógica do Menu Hambúrguer ---
     const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    const mainNav = document.getElementById('main-nav'); // Mudamos para pegar o <nav>
 
     // 1. Abrir/Fechar o menu ao clicar no botão
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('show');
-    });
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('show');
+        });
+    }
 
     // 2. Fechar o menu ao clicar em um dos links
-    const allLinks = navLinks.querySelectorAll('a');
+    const allLinks = mainNav.querySelectorAll('a');
 
     allLinks.forEach(function(link) {
         link.addEventListener('click', function() {
-            // Verifica se o menu está visível (se estamos no modo mobile) antes de fechar
-            if (navLinks.classList.contains('show')) {
-                navLinks.classList.remove('show');
+            // Verifica se o menu está visível antes de fechar
+            if (mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
             }
         });
     });
 
-    // --- Lógica de Rolagem Suave (já existente) ---
-    document.querySelectorAll('nav a').forEach(anchor => {
+    // --- Lógica de Rolagem Suave ---
+    document.querySelectorAll('#main-nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Pega o destino do link (ex: '#sobre')
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if(targetElement) {
+                 // Calcula a posição do elemento e subtrai a altura do header
+                const headerOffset = document.querySelector('header').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
         });
     });
 });
