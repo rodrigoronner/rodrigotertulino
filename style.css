@@ -31,10 +31,8 @@ header {
     z-index: 1000;
 }
 
-/* Alteração no header para alinhar o botão */
 header .container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -44,8 +42,13 @@ header .container {
     align-items: center;
 }
 
+.profile-header a, .header-text a {
+    text-decoration: none;
+    color: var(--white);
+}
+
 .profile-pic {
-    width: 80px; /* Reduzido para caber melhor no mobile */
+    width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-right: 20px;
@@ -54,7 +57,7 @@ header .container {
 
 header h1 {
     margin: 0;
-    font-size: 1.5em; /* Reduzido para caber melhor no mobile */
+    font-size: 1.5em;
 }
 
 header p {
@@ -62,46 +65,32 @@ header p {
     font-size: 1em;
 }
 
-/* Estilos para o botão do menu (novo) */
+/* --- ESTILOS DO MENU PARA DESKTOP --- */
 #menu-toggle {
-    display: none; /* Escondido por padrão */
-    background: none;
-    border: none;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+    display: none;
 }
 
-nav {
-    width: 100%;
-}
-
-nav ul {
+#main-nav ul {
+    margin: 0;
     padding: 0;
     list-style: none;
-    background: var(--secondary-color);
-    text-align: center;
-    margin: 1rem 0 0 0;
-    display: flex; /* Mudar para flex para layout horizontal */
-    justify-content: center; /* Centralizar itens */
+    display: flex;
 }
 
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
+#main-nav li a {
+    display: block;
+    padding: 15px 20px;
     color: var(--white);
     text-decoration: none;
-    font-size: 18px;
-    padding: 15px 20px;
-    display: inline-block;
+    background-color: var(--secondary-color);
 }
 
-nav ul li a:hover {
-    background: #004a99;
+#main-nav li a:hover {
+    background-color: #004a99;
 }
 
+
+/* --- SEÇÕES PRINCIPAIS --- */
 main section {
     padding: 40px 20px;
     border-bottom: 1px solid #ddd;
@@ -134,11 +123,7 @@ h2 {
     color: var(--primary-color);
 }
 
-.experience-item p, .project-item p {
-    margin: 5px 0;
-}
-
-.publication-item p {
+.experience-item p, .project-item p, .publication-item p {
     margin: 5px 0;
 }
 
@@ -169,41 +154,42 @@ footer {
     padding: 20px 0;
 }
 
-/* Regras para telas menores (Responsivo) */
+/* --- ESTILOS RESPONSIVOS PARA CELULAR E TABLET --- */
 @media (max-width: 768px) {
-    .profile-header {
-        width: calc(100% - 50px); /* Deixar espaço para o botão */
-    }
-    
-    header h1 {
-        font-size: 1.2em;
-    }
-    
-    .profile-pic {
-        width: 60px;
-        height: 60px;
-    }
-
-    /* Mostrar o botão hambúrguer */
+    /* Exibe o botão hambúrguer */
     #menu-toggle {
         display: block;
+        font-size: 2rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 10px;
+    }
+    
+    /* Esconde o menu de navegação do desktop */
+    #main-nav {
+        display: none; /* Oculta o nav por padrão */
     }
 
-    /* Esconder o menu por padrão no celular */
-    #nav-links {
-        display: none;
-        flex-direction: column; /* Itens em coluna */
+    /* Regra para exibir o menu quando ele estiver 'aberto' */
+    #main-nav.show {
+        display: block;
+        position: absolute; /* Posição flutuante */
+        top: 100%; /* Começa logo abaixo do header */
+        left: 0;
         width: 100%;
-        margin-top: 1rem;
+        background-color: var(--primary-color); /* Fundo para o painel */
     }
 
-    /* Classe que o JS usará para mostrar o menu */
-    #nav-links.show {
-        display: flex;
+    /* Ajusta a lista de links para o modo vertical */
+    #main-nav.show ul {
+        flex-direction: column;
     }
 
-    nav ul li {
-        display: block; /* Cada item ocupa uma linha */
-        width: 100%;
+    /* Ajusta os itens do menu para o modo vertical */
+    #main-nav.show li {
+        text-align: center;
+        border-top: 1px solid var(--secondary-color);
     }
 }
