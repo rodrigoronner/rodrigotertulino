@@ -31,15 +31,22 @@ header {
     z-index: 1000;
 }
 
+/* Alteração no header para alinhar o botão */
+header .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
 .profile-pic {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Reduzido para caber melhor no mobile */
+    height: 80px;
     border-radius: 50%;
     margin-right: 20px;
     border: 3px solid var(--white);
@@ -47,12 +54,26 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.5em; /* Reduzido para caber melhor no mobile */
 }
 
 header p {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1em;
+}
+
+/* Estilos para o botão do menu (novo) */
+#menu-toggle {
+    display: none; /* Escondido por padrão */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+nav {
+    width: 100%;
 }
 
 nav ul {
@@ -60,7 +81,9 @@ nav ul {
     list-style: none;
     background: var(--secondary-color);
     text-align: center;
-    margin: 0;
+    margin: 1rem 0 0 0;
+    display: flex; /* Mudar para flex para layout horizontal */
+    justify-content: center; /* Centralizar itens */
 }
 
 nav ul li {
@@ -97,7 +120,6 @@ h2 {
     font-size: 1.5em;
 }
 
-/* Estilo para itens de publicação, experiência e projetos */
 .publication-item, .experience-item, .project-item {
     background: var(--white);
     padding: 20px;
@@ -147,18 +169,41 @@ footer {
     padding: 20px 0;
 }
 
+/* Regras para telas menores (Responsivo) */
 @media (max-width: 768px) {
     .profile-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-pic {
-        margin: 0 auto 15px;
+        width: calc(100% - 50px); /* Deixar espaço para o botão */
     }
     
-    nav ul li {
+    header h1 {
+        font-size: 1.2em;
+    }
+    
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Mostrar o botão hambúrguer */
+    #menu-toggle {
         display: block;
-        text-align: center;
+    }
+
+    /* Esconder o menu por padrão no celular */
+    #nav-links {
+        display: none;
+        flex-direction: column; /* Itens em coluna */
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* Classe que o JS usará para mostrar o menu */
+    #nav-links.show {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block; /* Cada item ocupa uma linha */
+        width: 100%;
     }
 }
