@@ -1,46 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // --- Lógica do Menu Hambúrguer ---
+    // Elementos do Menu
     const menuToggle = document.getElementById('menu-toggle');
-    const mainNav = document.getElementById('main-nav'); // Mudamos para pegar o <nav>
-
-    // 1. Abrir/Fechar o menu ao clicar no botão
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('show');
-        });
+    const menuClose = document.getElementById('menu-close');
+    const mainNav = document.getElementById('main-nav');
+    
+    // Função para abrir o menu
+    function openMenu() {
+        mainNav.classList.add('open');
     }
 
-    // 2. Fechar o menu ao clicar em um dos links
-    const allLinks = mainNav.querySelectorAll('a');
+    // Função para fechar o menu
+    function closeMenu() {
+        mainNav.classList.remove('open');
+    }
 
-    allLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            // Verifica se o menu está visível antes de fechar
-            if (mainNav.classList.contains('show')) {
-                mainNav.classList.remove('show');
-            }
-        });
+    // Adiciona eventos aos botões
+    if (menuToggle && menuClose && mainNav) {
+        menuToggle.addEventListener('click', openMenu);
+        menuClose.addEventListener('click', closeMenu);
+    }
+
+    // Adiciona evento para fechar o menu ao clicar em um link
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu); 
     });
 
-    // --- Lógica de Rolagem Suave ---
-    document.querySelectorAll('#main-nav a').forEach(anchor => {
+    // --- Lógica de Rolagem Suave para as âncoras ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
-            // Pega o destino do link (ex: '#sobre')
+            
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             
-            if(targetElement) {
-                 // Calcula a posição do elemento e subtrai a altura do header
-                const headerOffset = document.querySelector('header').offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
+            if (targetElement) {
+                // Rola para o elemento
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
                 });
             }
         });
