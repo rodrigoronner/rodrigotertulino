@@ -71,7 +71,7 @@ main section { padding: 40px 20px; border-bottom: 1px solid #ddd; }
 h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; }
 .subsection-title { margin-top: 40px; color: var(--primary-color); font-size: 1.5em; }
 
-.publication-item, .experience-item, .project-item, .education-item {
+.publication-item, .experience-item, .project-item {
     background: var(--white);
     padding: 20px;
     margin-bottom: 20px;
@@ -80,34 +80,15 @@ h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color
     border-radius: 0 5px 5px 0;
 }
 
-.experience-item h3, .project-item h4, .education-item h3 {
+.experience-item h3, .project-item h4 {
     margin-top: 0;
     color: var(--primary-color);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
-.education-item .periodo {
-    font-size: 0.9em;
-    font-weight: normal;
-    color: #6c757d;
-    white-space: nowrap;
-    margin-left: 10px;
+.experience-item p, .project-item p, .publication-item p { 
+    margin: 8px 0; 
 }
 
-.education-item .instituicao {
-    font-style: italic;
-    color: #555;
-    margin-top: -10px;
-}
-
-.education-item .detalhes {
-    font-size: 0.9em;
-    color: #333;
-}
-
-.experience-item p, .project-item p, .publication-item p, .education-item p { margin: 8px 0; }
 #areas-pesquisa ul { list-style-type: disc; padding-left: 20px; }
 
 .social-links { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -147,14 +128,5 @@ footer { background: var(--primary-color); color: var(--white); text-align: cent
         background: none;
         border: none;
         cursor: pointer;
-    }
-
-    .education-item h3 {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .education-item .periodo {
-        margin-left: 0;
-        margin-top: 5px;
     }
 }
