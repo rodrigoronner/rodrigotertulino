@@ -17,4 +17,4 @@ Sou Doutor em Engenharia Informática pela Universidade de Coimbra, Portugal, co
 
 ### 📫 Onde me encontrar:
 
-[**Currículo Lattes**](http://lattes.cnpq.br/5863705420808941) | [**LinkedIn**]([http://br.linkedin.com/pub/rodrigo-silva/62/579/65/)](https://www.linkedin.com/in/rodrigo-tertulino-phd-06557962/)) | [**Google Scholar**](https://scholar.google.com/citations?user=ChLrIj0AAAAJ&hl=pt-BR) | [**CISUC/UC Profile**](https://www.cisuc.uc.pt/en/people/r-silva)
+[**Currículo Lattes**](http://lattes.cnpq.br/5863705420808941) | [**LinkedIn**](https://www.linkedin.com/in/rodrigo-tertulino-phd-06557962/) | [**Google Scholar**](https://scholar.google.com/citations?user=ChLrIj0AAAAJ&hl=pt-BR) | [**CISUC/UC Profile**](https://www.cisuc.uc.pt/en/people/r-silva)
