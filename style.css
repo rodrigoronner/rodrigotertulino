@@ -57,88 +57,86 @@ header .container {
     border: 2px solid var(--white);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.2em;
+header h1 { margin: 0; font-size: 1.2em; }
+header p { margin: 0; font-size: 0.9em; }
+
+#menu-close { display: none; }
+#menu-toggle { display: none; }
+
+#main-nav ul { margin: 0; padding: 0; list-style: none; display: flex; }
+#main-nav li a { display: block; padding: 10px 15px; color: var(--white); text-decoration: none; }
+#main-nav li a:hover { text-decoration: underline; }
+
+main section { padding: 40px 20px; border-bottom: 1px solid #ddd; }
+h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; }
+.subsection-title { margin-top: 40px; color: var(--primary-color); font-size: 1.5em; }
+
+.publication-item, .experience-item, .project-item, .education-item {
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0 5px 5px 0;
 }
 
-header p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* Esconde o botão de fechar por padrão */
-#menu-close {
-    display: none;
-}
-
-/* --- ESTILOS DO MENU PARA DESKTOP --- */
-#menu-toggle {
-    display: none; /* Botão hambúrguer escondido no desktop */
-}
-#main-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.experience-item h3, .project-item h4, .education-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
     display: flex;
-}
-#main-nav li a {
-    display: block;
-    padding: 10px 15px;
-    color: var(--white);
-    text-decoration: none;
-}
-#main-nav li a:hover {
-    text-decoration: underline;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* --- ESTILOS RESPONSIVOS PARA CELULAR --- */
+.education-item .periodo {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #6c757d;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.education-item .instituicao {
+    font-style: italic;
+    color: #555;
+    margin-top: -10px;
+}
+
+.education-item .detalhes {
+    font-size: 0.9em;
+    color: #333;
+}
+
+.experience-item p, .project-item p, .publication-item p, .education-item p { margin: 8px 0; }
+#areas-pesquisa ul { list-style-type: disc; padding-left: 20px; }
+
+.social-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.social-links a { display: inline-block; background: var(--secondary-color); color: var(--white); padding: 10px 15px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
+.social-links a:hover { background: var(--primary-color); }
+
+address { font-style: normal; line-height: 1.8; background-color: #e9ecef; padding: 15px; border-radius: 5px; }
+footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 20px 0; }
+
 @media (max-width: 768px) {
-    /* Exibe o botão hambúrguer */
-    #menu-toggle {
-        display: block;
-        font-size: 2rem;
-        color: white;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
+    #menu-toggle { display: block; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; padding: 0 10px; }
+    #main-nav { display: none; }
 
-    /* Esconde a navegação de desktop */
-    #main-nav {
-        display: none; /* O menu começa escondido */
-    }
-
-    /* Estilo para quando o menu estiver ABERTO (classe .open) */
     #main-nav.open {
         display: flex;
-        position: fixed; /* Ocupa a tela toda */
+        position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 31, 61, 0.95); /* Fundo escuro semi-transparente */
+        background-color: rgba(0, 31, 61, 0.95);
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    #main-nav.open ul {
-        flex-direction: column;
-        padding: 0;
-        list-style: none;
-        text-align: center;
-    }
+    #main-nav.open ul { flex-direction: column; padding: 0; list-style: none; text-align: center; }
+    #main-nav.open li a { font-size: 1.5rem; padding: 15px; color: var(--white); text-decoration: none; display: block; }
 
-    #main-nav.open li a {
-        font-size: 1.5rem;
-        padding: 15px;
-        color: var(--white);
-        text-decoration: none;
-        display: block;
-    }
-
-    /* Estilo do botão de fechar 'X' */
     #main-nav.open #menu-close {
         display: block;
         position: absolute;
@@ -150,17 +148,13 @@ header p {
         border: none;
         cursor: pointer;
     }
+
+    .education-item h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .education-item .periodo {
+        margin-left: 0;
+        margin-top: 5px;
+    }
 }
-
-
-/* --- ESTILOS GERAIS DO CONTEÚDO --- */
-main section { padding: 40px 20px; border-bottom: 1px solid #ddd; }
-h2 { color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 20px; }
-.subsection-title { margin-top: 40px; color: var(--primary-color); font-size: 1.5em; }
-.publication-item, .experience-item, .project-item { background: var(--white); padding: 20px; margin-bottom: 20px; border-left: 5px solid var(--secondary-color); box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 0 5px 5px 0; }
-.experience-item h3, .project-item h4 { margin-top: 0; color: var(--primary-color); }
-.experience-item p, .project-item p, .publication-item p { margin: 5px 0; }
-#areas-pesquisa ul { list-style-type: disc; padding-left: 20px; }
-.social-links a { display: inline-block; background: var(--secondary-color); color: var(--white); padding: 10px 15px; text-decoration: none; border-radius: 5px; margin: 5px; transition: background-color 0.3s; }
-.social-links a:hover { background: var(--primary-color); }
-footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 20px 0; }
