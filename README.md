@@ -1,4 +1,4 @@
-# Olá! Eu sou Prof. Dr. Rodrigo Tertulino
+# Prof. Dr. Rodrigo Tertulino
 
 ### 👨‍🏫 Professor no IFRN | Doutor em Engenharia Informática
 
