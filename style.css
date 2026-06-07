@@ -719,3 +719,50 @@ footer {
   background: rgba(255,255,255,.15);
   color: #fff;
 }
+
+/* ===== LIVROS: variantes de capa e botão Uiclap ===== */
+.book-cover-3 { background: linear-gradient(150deg, #2d1654 0%, #6d28d9 70%, #a78bfa 100%); }
+.book-cover-4 { background: linear-gradient(150deg, #7c2d12 0%, #ea580c 70%, #fb923c 100%); }
+.book-cover-5 { background: linear-gradient(150deg, #0f2027 0%, #203a43 50%, #2c5364 100%); }
+.book-cover-6 { background: linear-gradient(150deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+.book-cover-7 { background: linear-gradient(150deg, #3d0000 0%, #870000 60%, #c62a2a 100%); }
+
+.book-store-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
+.btn-uiclap {
+  display: inline-block;
+  background: #6d28d9;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 700;
+  transition: background .2s, transform .15s;
+}
+.btn-uiclap:hover { background: #5b21b6; color: #fff; transform: translateY(-1px); }
+
+.format-badge.sold { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+
+.book-series-group { margin-bottom: 36px; }
+.book-series-group-title {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  color: var(--navy-mid);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.series-chip {
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: var(--surface-3);
+  color: var(--text-soft);
+  border: 1px solid var(--border);
+}
