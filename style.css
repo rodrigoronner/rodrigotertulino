@@ -668,6 +668,18 @@ h2::after {
 }
 .btn-uiclap:hover { background: #5b21b6; color: #fff; transform: translateY(-1px); }
 
+.btn-gplay {
+  display: inline-block;
+  background: #01875f;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 700;
+  transition: background .2s, transform .15s;
+}
+.btn-gplay:hover { background: #016b4c; color: #fff; transform: translateY(-1px); }
+
 .book-asin { font-size: .68rem; color: #aaa; border-top: 1px solid var(--border); padding-top: 10px; margin: 0; }
 
 /* ===== ÁREAS ===== */
