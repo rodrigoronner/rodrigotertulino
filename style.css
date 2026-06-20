@@ -680,6 +680,21 @@ h2::after {
 }
 .btn-gplay:hover { background: #016b4c; color: #fff; transform: translateY(-1px); }
 
+.btn-clube {
+  display: inline-block;
+  background: #c2410c;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 700;
+  transition: background .2s, transform .15s;
+}
+.btn-clube:hover { background: #9a3412; color: #fff; transform: translateY(-1px); }
+
+.book-cover-9  { background: linear-gradient(150deg, #1e1b4b 0%, #4338ca 60%, #818cf8 100%); }
+.book-cover-10 { background: linear-gradient(150deg, #052e16 0%, #15803d 60%, #4ade80 100%); }
+
 .book-asin { font-size: .68rem; color: #aaa; border-top: 1px solid var(--border); padding-top: 10px; margin: 0; }
 
 /* ===== ÁREAS ===== */
